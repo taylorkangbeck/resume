@@ -1,0 +1,226 @@
+% !TeX program = xelatex
+\documentclass{my_cv}
+\title{Resume}
+\author{Taylor Kang Beck}
+\date{Feb 2025}
+\usepackage[a4paper, left=2.5em, right=2.5em, top=2.5em, bottom=1em]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{0cm}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage[none]{hyphenat}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\defaultfontfeatures{LetterSpace=2.5}
+
+\hypersetup{
+    unicode=true,
+    colorlinks=true,
+    urlcolor=black,
+}
+
+\setmainfont{ArialMT}[
+    Path=./fonts/,
+    Extension = .ttf,
+    UprightFont=*-Light,
+    BoldFont=*-Medium,
+    ItalicFont=*-Italic,
+    ItalicFeatures={
+        SmallCapsFont=*-Italic,
+    },
+    BoldFeatures={
+        SmallCapsFont=*-Medium,  
+    },
+    SmallCapsFont=*-Medium,
+    ]
+
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{}{}{#1}}}
+
+
+
+\begin{document}
+
+
+% \begin{multicols}{1}
+    \headerSection{\ruleafter{\badge{flashyGreen}{\Large {\textbf{Full Stack AI/ML}}}}}
+    % \columnbreak
+    % \headerSection{\xhrulefill{black}{0.5em}}
+    % \columnbreak
+    % \headerSection{\xhrulefill{black}{0.5em} }
+% \end{multicols}
+
+\begin{multicols}{3}
+    \headerSection{\Huge \textbf{Taylor \newline Kang \newline Beck}}
+        \columnbreak
+    \cvParagraph{
+    \socialicon{\faPhone}
+    \href{tel:7027383599}{+1 702 738 3599} \newline 
+    \socialicon{\faEnvelope}
+    \href{mailto:t@ylor.cc}{t@ylor.cc} \newline
+    \socialicon{\faGlobe} \href{https://www.taylor.id}{taylor.id} \newline
+    \socialicon{\faGithub}
+    \href{https://github.com/taylorkangbeck}{taylorkangbeck} \newline
+    \socialicon{\faLinkedin}
+    \href{https://www.linkedin.com/in/taylorkangbeck/}{taylorkangbeck}
+    }
+
+    \columnbreak
+    \begin{spacing}{1.2}
+        Versatile machine learning engineer with 8+ years of experience pushing the boundaries of AI systems. Skilled at transforming cutting-edge research into production-ready systems across domains including language, audio, computer vision, and robotics.
+    \end{spacing}
+\end{multicols}
+
+\vspace{1em}
+\setlength{\columnsep}{1cm}
+
+\cvSection{Experience}
+\begin{adjustwidth}{2em}{0em}
+
+\positionAndCompanyLine{Cofounder, CTO}{Of Counsel AI}{07/2023 - 09/2024}
+\project{Legal AI}{Copilot, LLM Systems \& Evaluation, RAG \& Knowledge Graphs, Prompt Engineering}
+
+\begin{itemize}
+\item Architected and deployed a production-scale RAG system combining graph databases and LLMs for legal document drafting and analysis
+\item Developed a general-purpose agent system with distributed workflow execution, handling complex multi-step document processing tasks, increasing batch processing speed by 80\%
+\item Implemented comprehensive LLM evaluation framework with custom datasets, enabling data-driven model selection and 25\% quality improvement
+\item Engineered an intelligent copilot system integrating chat, document editing, and UI interaction capabilities
+\item Designed and deployed distributed microservices architecture supporting real-time collaboration and multi-tenant access
+\item Built enterprise-grade document editor with real-time collaboration using CRDTs
+\item Selected for Madrona Venture Labs' Launchable startup competition
+
+\end{itemize}
+\techStackList{AWS, Neo4J, Postgres, Temporal, Docker, Python, LangGraph, Typescript, Next.js}
+\vspace{0.5em}
+
+\positionAndCompanyLine{Founder}{Weaver.fm}{09/2022 - 04/2023}
+\project{Social Audio}{Speech Transcription, Audio Processing, LLMs \& Embedding Models, On-Device Inference}
+
+\begin{itemize}
+    \item Developed and deployed a custom ASR pipeline combining Whisper and forced alignment for precise audio transcription, reducing errors by 40\%
+\item Deployed efficient self-hosted embedding infrastructure for content processing and recommendations
+\item Engineered intelligent conversation facilitation system using LLM-generated contextual prompts, increasing average conversation length 3x
+\item Designed, implemented, and deployed an iOS app with iterative product improvements driven by telemetry data and user interviews
+\end{itemize}
+\techStackList{AWS, Postgres, Python, FastAPI, Typescript, React Native, ggml}
+\vspace{0.5em}
+
+\positionAndCompanyLine{SDE, Robotics Simulation}{Amazon Scout}{07/2020 - 08/2022}
+\project{Autonomous Delivery}{Distributed Systems, GPU Acceleration, Dataset Generation, Multimodal ML}
+
+\begin{itemize}
+    \item Led development of GPU-accelerated cloud simulation platform, handling 5,000+ photorealistic physics-based tests daily
+\item Optimized multi-region autoscaling to increase GPU utilization by 25\% and decrease job queueing times by 50\%
+\item Organized and coordinated cross-functional initiatives across multiple teams
+\item Engineered automated pipeline for generating 1M+ synthetic sensor training samples monthly, enhancing navigation and perception models
+\item Implemented multimodal autoencoder and clustering system to enhance incident identification and classification, resulting in discovery of new failure modes
+\item Enabled on-demand, GPU-accelerated environments and tools for research scientists
+\item Architected software distribution system supporting 1,000+ physical robot deployments weekly, with rollback capabilities
+\end{itemize}
+\techStackList{AWS, ROS, Python, PyTorch, C++, Nvidia Falcor, Vulkan, CUDA, Typescript, React}
+\vspace{0.5em}
+
+\positionAndCompanyLine{Machine Learning Engineer}{AI Foundation}{01/2019 - 02/2020}
+\project{Generative AI Avatars}{Voice Cloning, Computer Vision, Natural Language Processing}
+\begin{adjustwidth}{1em}{0em}
+
+\begin{itemize}
+    \item Led training and deployment of machine learning models across the entire engineering organization
+\item Developed a novel alternative to batch normalization for computer vision models, achieving faster convergence without decreasing accuracy during training
+\item Trained, deployed, and maintained a high-performance voice cloning pipeline
+\item Conducted ablation studies and surveys of embedding models and implemented a semantic similarity service, boosting response accuracy by 30\%
+\item Implemented real-time systems for facial landmark detection and emotion recognition
+\item Optimized 3D animation calculations, reducing memory and compute requirements by 50\%
+\end{itemize}
+\techStackList{Python, PyTorch, Kafka, Scala, AWS, Google Cloud, Typescript, C\#, Unity3D, Docker, Websockets, WebRTC, Swift, React}
+\end{adjustwidth}
+
+\vspace{1em}
+
+\positionAndCompanyLine{SDE, Machine Learning Services}{Amazon}{08/2016 - 01/2019}
+\project{Alexa Shopping}{Language Model Training and Inference, MLOps}
+
+\begin{itemize}
+   \item Led development of language model infrastructure as founding engineer on Alexa Shopping ML team, serving 40M+ monthly active users
+\item Developed and contributed reusable neural network modules to internal PyTorch model development library
+\item Facilitated effective collaboration and communication between engineering and research science teams
+\item Built and deployed distributed machine learning inference services achieving 99.99\% uptime and 50ms average latency across 10M+ daily requests
+\item Developed automated model deployment pipeline reducing required developer time from 2 weeks to 2 days
+\item Designed key components of data annotation and human-in-the-loop model evaluation tools
+\end{itemize}
+\techStackList{Python, PyTorch, Pandas, Numpy, Java, RabbitMQ, CuBLAS}
+
+\end{adjustwidth}
+
+\vspace{1em}
+
+\cvSection{Education}
+\begin{adjustwidth}{2em}{0em}
+
+\positionAndCompanyLine{Bachelor of Science, Computer Science}{Vanderbilt University}{05/2012}
+\begin{itemize}
+    \item Minor: Engineering Management
+    \item Artificial Intelligence I \& II, Machine Learning, Neuroscience, Big Data, Human-Computer Interaction
+\end{itemize}
+
+\positionAndCompanyLine{}{Other coursework}{}
+\begin{itemize}
+    \item Machine Learning University at Amazon (internal training program)
+    \begin{itemize}
+        \item 12 six-week classes including Probabilistic Graphical Models, Deep Learning NLP, CNNs, RNNs
+    \end{itemize}
+    \item Statistics, Research Design in Data Science Masters Program at UCBerkeley
+\end{itemize}
+
+\end{adjustwidth}
+\vspace{1em}
+
+\begin{multicols}{2}
+    \begin{spacing}{1}
+    \cvSection{Additional Projects}
+    \positionAndCompanyLine{}{Independent Consulting}{2022 - 2025}
+    \begin{itemize}
+        \item Designed, built, and delivered AI prototypes to clients including: automated product listing generation from voice descriptions, internal Slack Q\&A agent
+    \end{itemize}
+    
+    \cvSection{Leadership}
+    \positionAndCompanyLine{}{AECJ}{2020 - 2025}
+    \begin{itemize}
+        \item Climate nonprofit board of directors, VP
+        \item Team lead: Tech, Recruiting
+    \end{itemize}
+     \positionAndCompanyLine{}{RVU Records}{2014 - 2016}
+    \begin{itemize}
+        \item Recording studio, Director
+    \end{itemize}
+    \end{spacing}
+
+    
+    \columnbreak
+    %  \cvSection{Languages}
+    % \begin{adjustwidth}{1em}{0em}
+    % Polish: Native language
+    % \newline
+    % English: Upper-Intermediate (B2)
+    % \end{adjustwidth}
+    
+    \cvSection{Publications}
+    \begin{itemize}
+        \item Mean Shift Rejection: Training Deep Neural Networks Without Minibatch Statistics or Normalization \href{https://arxiv.org/abs/1911.13173}{\faLink}
+    \end{itemize}
+    \cvSection{Hobbies}
+    \begin{itemize}
+        \item Electronic music production
+        \item Basketball
+        \item Soccer
+        \item Skateboarding
+        \item Snowboarding
+        
+    \end{itemize}
+\end{multicols}
+
+
+\end{document} ​
