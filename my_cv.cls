@@ -39,28 +39,40 @@
   {}{0em}
   {}
 
+% Single left edge: no heading indent, tight vertical rhythm
+\titlespacing*{\section}{0pt}{1.4em}{0.7em}
+\titlespacing*{\subsection}{0pt}{1em}{0.4em}
+
+% Bullets hug the left edge
+\setlength{\leftmargini}{0.9em}
+\setlength{\leftmarginii}{1.1em}
+\setlength{\labelsep}{0.5em}
+\def\@listi{\leftmargin\leftmargini \topsep 0.2em \parsep 0pt \itemsep 0.2em}
+\def\@listii{\leftmargin\leftmarginii \labelwidth\leftmarginii \advance\labelwidth-\labelsep \topsep 0.1em \parsep 0pt \itemsep 0.1em}
+\let\@listI\@listi
+\@listi
+
 \newcommand{\headerSection}[1]{\section{\texorpdfstring{#1}{}}}
 
 \newcommand{\cvSection}[1]{\section{\texorpdfstring{\ruleafter{\badgeWithFontColor{black}{white}{#1}}}{}}}
 
 
-\newcommand{\cvSection}[1]{\section{\texorpdfstring{\ruleafter{#1}}{}}}
 
 
-\newcommand{\positionAndCompanyLine}[3]{
-  \subsection{\texorpdfstring{\textbf{#1} \textit{#2} \hfill {}{#3}}{}}
+\newcommand{\positionAndCompanyLine}[3]{%
+  \subsection{\texorpdfstring{\textbf{#1} \textit{#2} \hfill {}{#3}}{}}%
 }
 
-\newcommand{\badge}[2]{
-  \colorbox{#1}{\hspace{0.1em} #2 \hspace{0.1em}}
+\newcommand{\badge}[2]{%
+  \colorbox{#1}{\hspace{0.1em} #2 \hspace{0.1em}}%
 }
 
-\newcommand{\badgeWithFontColor}[3]{
-  \colorbox{#1}{\hspace{0.1em} \color{#2} \textbf{#3}  \hspace{0.1em}}
+\newcommand{\badgeWithFontColor}[3]{%
+  \colorbox{#1}{\hspace{0.1em} \color{#2} \textbf{#3}  \hspace{0.1em}}%
 }
 
-\newcommand{\project}[2]{
-  \begin{flushleft}{\badge{lavenderBlue}{#1} \textbf{#2}} \end{flushleft}
+\newcommand{\project}[2]{%
+  \par\noindent\badge{lavenderBlue}{#1} \textbf{#2}\par%
 }
 
 % \badge{queenPink}
