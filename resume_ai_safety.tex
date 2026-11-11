@@ -1,0 +1,172 @@
+% !TeX program = xelatex
+\documentclass{my_cv}
+\title{Resume}
+\author{Taylor Kang Beck}
+\date{Oct 2026}
+\usepackage[a4paper, left=2.5em, right=2.5em, top=2.5em, bottom=1em]{geometry}
+\usepackage{multicol}
+\setlength{\columnsep}{0cm}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage[none]{hyphenat}
+\setlength{\emergencystretch}{3em}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\defaultfontfeatures{LetterSpace=2.5}
+
+\hypersetup{
+    unicode=true,
+    colorlinks=true,
+    urlcolor=black,
+}
+
+\setmainfont{ArialMT}[
+    Path=./fonts/,
+    Extension = .ttf,
+    UprightFont=*-Light,
+    BoldFont=*-Medium,
+    ItalicFont=*-Italic,
+    ItalicFeatures={
+        SmallCapsFont=*-Italic,
+    },
+    BoldFeatures={
+        SmallCapsFont=*-Medium,  
+    },
+    SmallCapsFont=*-Medium,
+    ]
+
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{#1}}
+
+\begin{document}
+
+% \begin{multicols}{1}
+    \headerSection{\ruleafter{\badge{flashyGreen}{\Large {\textbf{AI Engineer}}}}}
+    % \columnbreak
+    % \headerSection{\xhrulefill{black}{0.5em}}
+    % \columnbreak
+    % \headerSection{\xhrulefill{black}{0.5em} }
+% \end{multicols}
+
+\noindent
+\begin{minipage}[t]{0.19\textwidth}
+    \vspace{0pt}
+    {\Huge \textbf{Taylor \\ Kang \\ Beck}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.22\textwidth}
+    \vspace{0pt}
+    \begin{spacing}{1.5}
+    \socialicon{\faPhone}~\href{tel:7027383599}{+1 702 738 3599} \\
+    \socialicon{\faEnvelope}~\href{mailto:t@ylor.cc}{t@ylor.cc} \\
+    \socialicon{\faGlobe}~\href{https://www.taylor.id}{taylor.id} \\
+    \socialicon{\faGithub}~\href{https://github.com/taylorkangbeck}{taylorkangbeck} \\
+    \socialicon{\faLinkedin}~\href{https://www.linkedin.com/in/taylorkangbeck/}{taylorkangbeck}
+    \end{spacing}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.53\textwidth}
+    \vspace{0pt}
+    \begin{spacing}{1.2}
+        \noindent\textbf{Evaluation, monitoring, and oversight of deployed AI systems}\par
+        \vspace{0.3em}
+        \noindent Staff-level AI and full-stack engineer with 10 years building and evaluating AI systems in production across language, voice, vision, and robotics. Most recently tech lead for LLM voice agents handling \textasciitilde50k calls a day, where I built the evaluation and production-monitoring system. Moving into AI safety research, focused on scalable oversight and AI control.
+    \end{spacing}
+\end{minipage}
+
+\cvSection{Research \& AI Safety}
+
+\begin{itemize}
+\item \textbf{Publication:} \textit{Mean Shift Rejection: Training Deep Neural Networks Without Minibatch Statistics or Normalization} (arXiv, 2019) \href{https://arxiv.org/abs/1911.13173}{\faLink} --- second author. Studied an alternative to batch normalization in ResNets; faster convergence with no loss in accuracy. Code on GitHub.
+\item \textbf{AI safety research reading group (Oct 2023 -- Apr 2024):} weekly group with alignment researchers focused on LLM consistency and control; read and gave feedback on papers on output monitoring and truthfulness.
+\item \textbf{BlueDot Impact AI safety course (Mar 2025):} introductory non-technical course
+\end{itemize}
+
+\cvSection{Experience}
+
+\positionAndCompanyLine{Staff AI Engineer, Tech Lead}{Hiya}{05/2025 - 05/2026}
+\project{LLM Voice Agents}{For businesses \textperiodcentered{} \textasciitilde50k production calls/day}
+
+\begin{itemize}
+\item Tech lead building a platform for LLM voice agents making and answering calls for businesses; owned technical direction end to end across infrastructure, backend, and frontend, met with customers, and shaped product vision
+\item Built the evaluation system from scratch: hundreds of simulated call scenarios and assertions per agent, graded by LLM judges and run daily across every agent to catch regressions
+\item Extended the same judges to production as a post-call monitor, grading live calls after they ended and surfacing failures for human review, providing oversight at a scale no human team could cover
+\item Connected judges to agent-harness signals to catch faulty tool calls, such as failing to transfer a caller to a human when required
+\item Built a failure taxonomy using axial coding and a human review UI to label and triage failure types
+\end{itemize}
+
+\positionAndCompanyLine{Cofounder, CTO}{Of Counsel AI}{07/2023 - 09/2024}
+\project{Legal AI}{Copilot}
+
+\begin{itemize}
+\item Built an LLM evaluation framework with custom datasets, enabling data-driven model selection and a 25\% quality improvement
+\item Architected a production RAG system combining graph databases and LLMs for legal drafting and analysis
+\item Built an agent system with distributed workflow execution for multi-step document processing, increasing batch speed 80\%
+\item Built a copilot integrating chat, document editing, and UI actions, on a real-time collaborative editor (CRDTs)
+\item Selected for Madrona Venture Labs' Launchable startup competition
+\end{itemize}
+
+\positionAndCompanyLine{Founder}{Weaver.fm}{09/2022 - 04/2023}
+\project{Social Audio App}{}
+
+\begin{itemize}
+\item Built a custom ASR pipeline combining Whisper with forced alignment, reducing transcription errors 40\%
+\item Used LLM-generated prompts to facilitate conversations, tripling average conversation length
+\end{itemize}
+
+\positionAndCompanyLine{SDE, Robotics Simulation}{Amazon Scout}{07/2020 - 08/2022}
+\project{Autonomous Delivery}{Sidewalk delivery robots}
+
+\begin{itemize}
+\item Built a multimodal autoencoder and clustering system to identify and classify incidents, discovering new robot failure modes
+\item Led development of a GPU-accelerated cloud simulation platform running 5,000+ photorealistic, physics-based tests daily against new robot software versions
+\item Built a pipeline generating 1M+ synthetic sensor training samples monthly for navigation and perception models
+\item Raised GPU utilization 25\% and cut job queue times 50\% through multi-region autoscaling
+\item Architected software distribution with rollback for 1,000+ physical robot deployments weekly
+\end{itemize}
+
+\positionAndCompanyLine{Machine Learning Engineer}{AI Foundation}{01/2019 - 02/2020}
+\project{Generative AI}{Avatars}
+
+\begin{itemize}
+\item Developed a novel alternative to batch normalization that converged faster without losing accuracy (see Publication)
+\item Led training and deployment of ML models across the engineering organization, including a voice-cloning pipeline
+\item Ran ablation studies of embedding models and built a semantic similarity service, improving response accuracy 30\%
+\end{itemize}
+
+\positionAndCompanyLine{SDE, Machine Learning Services}{Amazon}{08/2016 - 01/2019}
+\project{Alexa Shopping}{}
+
+\begin{itemize}
+\item Founding engineer on the Alexa Shopping ML team; built language model infrastructure serving 40M+ monthly users
+\item Designed key components of data annotation and human-in-the-loop model evaluation tools
+\item Built distributed inference services with 99.99\% uptime and 50 ms average latency across 10M+ daily requests
+\item Cut model deployment time from 2 weeks to 2 days with an automated pipeline
+\end{itemize}
+
+\cvSection{Education}
+
+\begin{itemize}
+\item \textbf{B.S. Computer Science, Vanderbilt University} (2016) --- minor in Engineering Management; coursework in AI, Machine Learning, Neuroscience
+\item \textbf{Machine Learning University at Amazon} --- 12 six-week courses including Probabilistic Graphical Models, Deep Learning NLP, CNNs, RNNs, Transformers
+\item \textbf{UC Berkeley, Data Science Masters Program} (unfinished) --- coursework in Statistics and Research Design
+\end{itemize}
+
+\cvSection{Skills}
+
+\begin{itemize}
+\item \textbf{ML \& LLMs:} PyTorch, LLM-as-judge evaluation, agents and tool use, RAG, ASR and voice, embedding models, ablation studies
+\item \textbf{Languages:} Python, TypeScript, C++, CUDA, Java, Scala
+\item \textbf{Infrastructure:} AWS, Google Cloud, Docker, Postgres, Temporal, Neo4j, Kafka, ROS, Vulkan
+\end{itemize}
+
+\cvSection{Other}
+
+\begin{itemize}
+\item \textbf{Independent consulting (2022 -- 2025):} built AI prototypes for clients, including product listings generated from voice descriptions and an internal Slack Q\&A agent
+\item \textbf{AECJ climate nonprofit (2020 -- 2026):} board of directors, VP; led tech and recruiting
+\end{itemize}
+
+\end{document}

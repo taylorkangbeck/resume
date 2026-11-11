@@ -43,7 +43,7 @@
 \begin{document}
 
 % \begin{multicols}{1}
-    \headerSection{\ruleafter{\badge{flashyGreen}{\Large {\textbf{AI Engineer}}}}}
+    \headerSection{\ruleafter{\badge{flashyGreen}{\Large {\textbf{AI Product Engineer}}}}}
     % \columnbreak
     % \headerSection{\xhrulefill{black}{0.5em}}
     % \columnbreak
@@ -70,19 +70,11 @@
 \begin{minipage}[t]{0.53\textwidth}
     \vspace{0pt}
     \begin{spacing}{1.2}
-        \noindent\textbf{Evaluation, monitoring, and oversight of deployed AI systems}\par
+        \noindent\textbf{Shipping AI products end to end, from infrastructure to UI}\par
         \vspace{0.3em}
-        \noindent Staff-level AI and full-stack engineer with 10 years building and evaluating AI systems in production across language, voice, vision, and robotics. Most recently tech lead for LLM voice agents handling \textasciitilde50k calls a day, where I built the evaluation and production-monitoring system. Moving into AI safety research, focused on scalable oversight and AI control.
+        \noindent Staff-level full-stack and AI engineer with 10 years shipping AI products in production across language, voice, vision, and robotics. Most recently tech lead for an LLM voice agent platform handling \textasciitilde50k calls a day, owning infrastructure, backend, frontend, and evals. Two-time founder who works directly with customers to turn fuzzy problems into products.
     \end{spacing}
 \end{minipage}
-
-\cvSection{Research \& AI Safety}
-
-\begin{itemize}
-\item \textbf{Publication:} \textit{Mean Shift Rejection: Training Deep Neural Networks Without Minibatch Statistics or Normalization} (arXiv, 2019) \href{https://arxiv.org/abs/1911.13173}{\faLink} --- second author. Studied an alternative to batch normalization in ResNets; faster convergence with no loss in accuracy. Code on GitHub.
-\item \textbf{AI safety research reading group (Oct 2023 -- Apr 2024):} weekly group with alignment researchers focused on LLM consistency and control; read and gave feedback on papers on output monitoring and truthfulness.
-\item \textbf{BlueDot Impact AI safety course (Mar 2025):} introductory non-technical course
-\end{itemize}
 
 \cvSection{Experience}
 
@@ -90,21 +82,21 @@
 \project{LLM Voice Agents}{For businesses \textperiodcentered{} \textasciitilde50k production calls/day}
 
 \begin{itemize}
-\item Tech lead building a platform for LLM voice agents making and answering calls for businesses; owned technical direction end to end across infrastructure, backend, and frontend, met with customers, and shaped product vision
-\item Built the evaluation system from scratch: hundreds of simulated call scenarios and assertions per agent, graded by LLM judges and run daily across every agent to catch regressions
-\item Extended the same judges to production as a post-call monitor, grading live calls after they ended and surfacing failures for human review, providing oversight at a scale no human team could cover
-\item Connected judges to agent-harness signals to catch faulty tool calls, such as failing to transfer a caller to a human when required
-\item Built a failure taxonomy using axial coding and a human review UI to label and triage failure types
+\item Tech lead for a platform of LLM voice agents making and answering calls for businesses; owned technical direction end to end across infrastructure, backend, and frontend, met with customers, and shaped product vision
+\item Built the evaluation system from scratch: hundreds of simulated call scenarios and assertions per agent, graded by LLM judges and run daily across every agent to catch regressions before they shipped
+\item Shipped a post-call monitor that graded live production calls with the same judges, surfacing failures for human review at a scale no team could cover by hand
+\item Instrumented the agent harness to catch faulty tool calls, such as failing to transfer a caller to a human when required
+\item Built a human review UI and failure taxonomy so the team could label, triage, and prioritize agent fixes
 \end{itemize}
 
 \positionAndCompanyLine{Cofounder, CTO}{Of Counsel AI}{07/2023 - 09/2024}
 \project{Legal AI}{Copilot}
 
 \begin{itemize}
-\item Built an LLM evaluation framework with custom datasets, enabling data-driven model selection and a 25\% quality improvement
+\item Built the product from zero as technical cofounder: a legal copilot integrating chat, document editing, and UI actions on a real-time collaborative editor (CRDTs)
 \item Architected a production RAG system combining graph databases and LLMs for legal drafting and analysis
 \item Built an agent system with distributed workflow execution for multi-step document processing, increasing batch speed 80\%
-\item Built a copilot integrating chat, document editing, and UI actions, on a real-time collaborative editor (CRDTs)
+\item Built an LLM evaluation framework with custom datasets, enabling data-driven model selection and a 25\% quality improvement
 \item Selected for Madrona Venture Labs' Launchable startup competition
 \end{itemize}
 
@@ -112,8 +104,9 @@
 \project{Social Audio App}{}
 
 \begin{itemize}
+\item Designed and built a social audio app solo, from backend to client
+\item Shipped LLM-generated conversation prompts as a core feature, tripling average conversation length
 \item Built a custom ASR pipeline combining Whisper with forced alignment, reducing transcription errors 40\%
-\item Used LLM-generated prompts to facilitate conversations, tripling average conversation length
 \end{itemize}
 
 \positionAndCompanyLine{SDE, Robotics Simulation}{Amazon Scout}{07/2020 - 08/2022}
@@ -131,9 +124,9 @@
 \project{Generative AI}{Avatars}
 
 \begin{itemize}
-\item Developed a novel alternative to batch normalization that converged faster without losing accuracy (see Publication)
 \item Led training and deployment of ML models across the engineering organization, including a voice-cloning pipeline
-\item Ran ablation studies of embedding models and built a semantic similarity service, improving response accuracy 30\%
+\item Built a semantic similarity service backed by embedding-model ablations, improving avatar response accuracy 30\%
+\item Co-authored a paper on a faster-converging alternative to batch normalization (see Publication)
 \end{itemize}
 
 \positionAndCompanyLine{SDE, Machine Learning Services}{Amazon}{08/2016 - 01/2019}
@@ -154,12 +147,18 @@
 \item \textbf{UC Berkeley, Data Science Masters Program} (unfinished) --- coursework in Statistics and Research Design
 \end{itemize}
 
+\cvSection{Publication}
+
+\begin{itemize}
+\item \textit{Mean Shift Rejection: Training Deep Neural Networks Without Minibatch Statistics or Normalization} (arXiv, 2019) \href{https://arxiv.org/abs/1911.13173}{\faLink} --- second author. Studied an alternative to batch normalization in ResNets; faster convergence with no loss in accuracy. Code on GitHub.
+\end{itemize}
+
 \cvSection{Skills}
 
 \begin{itemize}
-\item \textbf{ML \& LLMs:} PyTorch, LLM-as-judge evaluation, agents and tool use, RAG, ASR and voice, embedding models, ablation studies
-\item \textbf{Languages:} Python, TypeScript, C++, CUDA, Java, Scala
-\item \textbf{Infrastructure:} AWS, Google Cloud, Docker, Postgres, Temporal, Neo4j, Kafka, ROS, Vulkan
+\item \textbf{Languages:} Python, TypeScript, C++, Java, Scala, CUDA
+\item \textbf{AI \& LLMs:} agents and tool use, RAG, LLM-as-judge evals, voice and ASR, embedding models, PyTorch
+\item \textbf{Full stack \& infra:} real-time collaborative editing (CRDTs), Postgres, Neo4j, Temporal, Kafka, Docker, AWS, Google Cloud
 \end{itemize}
 
 \cvSection{Other}
